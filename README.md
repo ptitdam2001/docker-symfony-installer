@@ -1,4 +1,4 @@
-# Symfony Command with Docker
+# Symfony Installer Command with Docker
 
 
 ### Requirement
@@ -22,4 +22,9 @@ alias symfony="docker run -i -t -u 1000 -v \`pwd\`:/src ptitdam2001/docker-symfo
 Don't forget execute
 ```
 source .bash_profile
+```
+### Usage
+
+```
+symfony new myproject
 ```
