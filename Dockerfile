@@ -1,7 +1,10 @@
-FROM php:5.6.5-fpm
+FROM php:5.6.5-cli
 
-RUN php -r "readfile('http://symfony.com/installer');" > symfony.phar && \
+VOLUME ["/src"]
+WORKDIR /src
+
+RUN curl -LsS http://symfony.com/installer > symfony.phar && \
   mv symfony.phar /usr/local/bin/symfony && \
-  chmod a+x /usr/local/bin/symfony
+  chmod +x /usr/local/bin/symfony
 
 ENTRYPOINT ["symfony"]
